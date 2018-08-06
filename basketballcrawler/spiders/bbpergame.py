@@ -38,13 +38,13 @@ class BbpergameSpider(CrawlSpider):
         season = response.xpath('//tr[re:test(@id, "per_game\.\d")]/th/a/text()').extract()
 
         
-        pts_per_g = response.xpath('//tr[re:test(@id, "per_game\.\d")]/td[@data-stat="pts_per_g"]/text()').extract()
+        pts_per_g = response.xpath('//tr[re:test(@id, "per_game\.\d")]/td[@data-stat="pts_per_g"]//text()').extract()
 
         
-        trb_per_g = response.xpath('//tr[re:test(@id, "per_game\.\d")]/td[@data-stat="trb_per_g"]/text()').extract()
+        trb_per_g = response.xpath('//tr[re:test(@id, "per_game\.\d")]/td[@data-stat="trb_per_g"]//text()').extract()
     
         
-        ast_per_g = response.xpath('//tr[re:test(@id, "per_game\.\d")]/td[@data-stat="ast_per_g"]/text()').extract()
+        ast_per_g = response.xpath('//tr[re:test(@id, "per_game\.\d")]/td[@data-stat="ast_per_g"]//text()').extract()
 
 
         stats['name'] = name
